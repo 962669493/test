@@ -1,0 +1,11 @@
+server:
+  port: 8081 #Tomcat端口
+spring:
+  dubbo:
+    application:
+      name: dubbo-provider #应用名
+    registry:
+      address: zookeeper://192.168.178.143:2181 #zookeeper地址
+    protocol:
+      name: dubbo
+      port: 20890 #dubbo服务暴露的端口

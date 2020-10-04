@@ -1,0 +1,8 @@
+server:
+  port: 9905
+
+spring:
+  application:
+    name: anytxn-accounting-api
+  profiles:
+    active: dev
