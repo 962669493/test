@@ -1,9 +1,5 @@
 package zz;
 
-import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.clients.consumer.ConsumerRecords;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -33,6 +29,9 @@ public class MyKafkaProvider {
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
         ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(topic, "123456");
         try {
+            producer.send(producerRecord);
+            producer.send(producerRecord);
+            producer.send(producerRecord);
             producer.send(producerRecord);
             producer.send(producerRecord);
         } catch (Exception e) {

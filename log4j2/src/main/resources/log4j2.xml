@@ -4,7 +4,7 @@
     <!--全局参数-->
     <Properties>
         <Property name="pattern">%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n</Property>
-        <Property name="logDir">logs</Property>
+        <Property name="logDir">.</Property>
     </Properties>
 
     <Loggers>

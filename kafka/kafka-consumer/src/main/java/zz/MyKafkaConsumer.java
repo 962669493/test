@@ -34,13 +34,13 @@ public class MyKafkaConsumer {
     }
 
     public static void main(String[] args) {
-        general();
+        offsetForTime();
     }
     public static void general(){
         Properties properties = initConfig();
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(properties);
         consumer.subscribe(Arrays.asList(topic));
-        for(int i=0;i<1;i++){
+        for(;true;){
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
             for (ConsumerRecord<String, String> record : records) {
                 Date date = new Date(record.timestamp());
@@ -50,7 +50,7 @@ public class MyKafkaConsumer {
             }
             consumer.commitAsync();
         }
-        consumer.close();
+        //consumer.close();
     }
 
     public static void seek(){
